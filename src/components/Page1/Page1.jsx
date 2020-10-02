@@ -15,7 +15,7 @@ function Page1() {
 
   function handleSet() {
     store.dispatch(setAppTextCreator(textareaRef.current.value));
-    setState({...state, present: '', memorized: textareaRef.current.value});
+    setState({...state, present: '', memorized: store.getState().appReducer.appText});
   }
 
   return (

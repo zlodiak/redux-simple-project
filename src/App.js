@@ -1,17 +1,26 @@
 import React from 'react';
+import {BrowserRouter, Route} from "react-router-dom";
+import {Link} from "react-router-dom";
+
 import './App.css';
 import Page1 from './components/Page1/Page1';
+import Page2 from './components/Page2/Page2';
 
 function App() {
   return (
-    <div className="App">
-      <header className="header">
-        <h1>redux textarea example</h1>
-      </header>
-      <main>
-        <Page1/>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header className="header">
+          <Link to="/page1">Page1</Link>
+          <Link to="/page2">Page2</Link>
+        </header>
+        <main>
+          <Route exact path='/'       render={ () => <Page1 /> }/>
+          <Route exact path='/page1'  render={ () => <Page1 /> }/>
+          <Route exact path='/page2'  render={ () => <Page2 /> }/>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
