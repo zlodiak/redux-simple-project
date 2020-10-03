@@ -3,8 +3,8 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {Link} from "react-router-dom";
 
 import './App.css';
-import Page1 from './components/Page1/Page1';
-import Page2 from './components/Page2/Page2';
+import Page1smart from './components/Page1/Page1smart';
+import Page2smart from './components/Page2/Page2smart';
 
 function App(props) {
   return (
@@ -15,9 +15,9 @@ function App(props) {
           <Link to="/page2">Page2</Link>
         </header>
         <main>
-          <Route exact path='/'       render={ () => <Page1 store={props.store} setAppTextCreator={props.setAppTextCreator}/> }/>
-          <Route exact path='/page1'  render={ () => <Page1 store={props.store} setAppTextCreator={props.setAppTextCreator}/> }/>
-          <Route exact path='/page2'  render={ () => <Page2 store={props.store} setAppTextCreator={props.setAppTextCreator}/> }/>
+          <Route exact path='/'       render={ () => <Page1smart/> }/>
+          <Route exact path='/page1'  render={ () => <Page1smart/> }/>
+          <Route exact path='/page2'  render={ () => <Page2smart/> }/>
         </main>
       </div>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Page2(props) {
-  const appText = props.store.getState().appReducer.appText;
+  const appText = props.text;
   let arr = [];
   if(appText) {
     arr = appText.split('').map(v => <div>{ v }</div>);

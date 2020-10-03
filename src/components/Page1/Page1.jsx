@@ -2,30 +2,29 @@ import React, { useState } from 'react';
 
 function Page1(props) {
   let textareaRef = React.createRef();
+  
   const [state, setState] = useState({
-    present: '',
-    memorized: '',
+    presentText: '',
   });
 
-  function handleChange() {
-    setState({...state, present: textareaRef.current.value})
+  function textareaSet() {
+    props.setValue(textareaRef.current.value);
+    textareaRef.current.value = '';
   }
 
-  function handleSet() {
-    props.store.dispatch(props.setAppTextCreator(textareaRef.current.value));
-    setState({...state, present: '', memorized: props.store.getState().appReducer.appText});
+  function textareaChange() {
+    setState({...state, presentText: textareaRef.current.value})
   }
 
   return (
     <div>
         <textarea 
-          ref={textareaRef}
-          value={state.present} 
-          onChange={ handleChange }>
+          ref={ textareaRef }
+          onChange={ textareaChange }>
         </textarea>
-        <button onClick={ handleSet }>send</button>
-        <div>present: {state.present}</div>
-        <div>memorized: {state.memorized}</div>
+        <button onClick={ textareaSet }>send</button>
+        <div>present: { state.presentText }</div>
+        <div>memorized: { props.text }</div>
     </div>
   );
 }

@@ -17,4 +17,4 @@ export const setAppTextCreator = appText => {
     return { type: 'SET_VALUE', appText: appText }
 }
 
-export default appReducer;	
+export default appReducer;
