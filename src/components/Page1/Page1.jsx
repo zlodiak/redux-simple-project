@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import store from '../../redux/store';
-import { setAppTextCreator } from '../../redux/appReducer';
 
-function Page1() {
+function Page1(props) {
   let textareaRef = React.createRef();
   const [state, setState] = useState({
     present: '',
@@ -14,8 +12,8 @@ function Page1() {
   }
 
   function handleSet() {
-    store.dispatch(setAppTextCreator(textareaRef.current.value));
-    setState({...state, present: '', memorized: store.getState().appReducer.appText});
+    props.store.dispatch(props.setAppTextCreator(textareaRef.current.value));
+    setState({...state, present: '', memorized: props.store.getState().appReducer.appText});
   }
 
   return (

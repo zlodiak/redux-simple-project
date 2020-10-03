@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import store from './redux/store';
+import { setAppTextCreator } from './redux/appReducer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store} setAppTextCreator={setAppTextCreator} />
   </React.StrictMode>,
   document.getElementById('root')
 );
