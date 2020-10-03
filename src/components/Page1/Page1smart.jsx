@@ -10,13 +10,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setValue: value => {
-      const action = setAppTextCreator(value);
-      dispatch(action);
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page1);
+export default connect(mapStateToProps, { setAppTextCreator })(Page1);

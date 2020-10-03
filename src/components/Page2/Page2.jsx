@@ -4,7 +4,7 @@ function Page2(props) {
   const appText = props.text;
   let arr = [];
   if(appText) {
-    arr = appText.split('').map(v => <div>{ v }</div>);
+    arr = appText.split('').map((v, index) => <div key={ index.toString() }>{ v }</div>);
   }
   
   return (
@@ -13,7 +13,7 @@ function Page2(props) {
       <hr/>
       { arr }
       <hr/>
-      { appText && appText.split('').map(v => <div>{ v }</div>) }
+      { appText && appText.split('').map((v, index) => <div key={ index.toString() }>{ v }</div>) }
     </div>
   );
 }

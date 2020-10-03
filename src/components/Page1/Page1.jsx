@@ -8,7 +8,7 @@ function Page1(props) {
   });
 
   function textareaSet() {
-    props.setValue(textareaRef.current.value);
+    props.setAppTextCreator(textareaRef.current.value);
     textareaRef.current.value = '';
   }
 
