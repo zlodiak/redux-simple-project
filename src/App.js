@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import './App.css';
 import Page1smart from './components/Page1/Page1smart';
 import Page2smart from './components/Page2/Page2smart';
+import Page3smart from './components/Page3/Page3smart';
 
 function App(props) {
   return (
@@ -13,11 +14,13 @@ function App(props) {
         <header className="header">
           <Link to="/page1">Page1</Link>
           <Link to="/page2">Page2</Link>
+          <Link to="/page3">Page3</Link>
         </header>
         <main>
           <Route exact path='/'       render={ () => <Page1smart/> }/>
           <Route exact path='/page1'  render={ () => <Page1smart/> }/>
           <Route exact path='/page2'  render={ () => <Page2smart/> }/>
+          <Route exact path='/page3'  render={ () => <Page3smart/> }/>
         </main>
       </div>
     </BrowserRouter>

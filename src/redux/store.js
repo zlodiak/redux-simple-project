@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import appReducer from './appReducer';
+import messagesReducer from './messagesReducer';
 
 let reducers = combineReducers({
-    appReducer
+    appReducer,
+    messagesReducer,
 });
 
 const store = createStore(reducers);
