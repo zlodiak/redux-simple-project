@@ -6,6 +6,7 @@ import Page3 from './Page3';
 const mapStateToProps = state => {
   return {
     messages: state.messagesReducer.messages,
+    genders: ['male', 'female'],
   }
 }
 
