@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Page3.module.css';
+import MessagesSmart from './Messages/MessagesSmart';
 
 function Page1(props) {
   const textRef = React.createRef();
@@ -64,15 +64,7 @@ function Page1(props) {
       <br/>
       <button onClick={ textareaSet }>send</button>
       <br/>
-      <ul className={styles.messages}>
-        <li className={styles.item}>
-          <div className={styles.date}></div>
-          <div className={styles.name}></div>
-          <div className={styles.gender}></div>
-          <div className={styles.subject}></div>
-          <div className={styles.text}></div>
-        </li>
-      </ul>
+      <MessagesSmart/>
     </div>
   );
 }

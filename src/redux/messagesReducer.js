@@ -1,11 +1,10 @@
 const messagesReducer = function messagesReducer(state = { messages: [] }, action) {
     switch(action.type) {
         case 'SET_MESSAGE': {
-            // state = {
-            //     ...state,
-            //     messages: state.messages.push(action.payload),
-            // };
-            state.messages.push(action.payload);
+            state = {
+                ...state,
+                messages: [ ...state.messages, action.payload ],
+            };
             break;
         }
         default:

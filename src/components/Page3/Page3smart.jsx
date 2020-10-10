@@ -1,4 +1,4 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { setMessageCreator } from '../../redux/messagesReducer';
 
 import Page3 from './Page3';

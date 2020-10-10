@@ -1,0 +1,10 @@
+.messages {
+    width: 300px;
+    margin: auto;
+    background: yellow;
+}
+
+    .item {
+        padding-bottom: 20px;
+        text-align: left;
+    }
