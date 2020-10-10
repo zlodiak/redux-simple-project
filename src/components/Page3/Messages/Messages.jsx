@@ -2,10 +2,7 @@ import React from 'react';
 import styles from './Messages.module.css';
 
 function Messages(props) {
-  console.log(props)
-
   const messages = props.messages.map((item, i) => {
-    console.log(item);
     return (
       <li className={styles.item} key={ i }>
         <div className={styles.date}>date: { item.date.toString() }</div>

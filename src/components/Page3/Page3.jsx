@@ -27,7 +27,7 @@ function Page1(props) {
       name: name,
       subject: subject,
       gender: gender,
-      date: new Date,
+      date: new Date(),
     });
     clearAll();
   }

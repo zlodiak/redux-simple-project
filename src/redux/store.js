@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import appReducer from './appReducer';
 import messagesReducer from './messagesReducer';
+import {reducer as formReducer} from 'redux-form';
 
 let reducers = combineReducers({
+    form: formReducer,
     appReducer,
     messagesReducer,
 });
