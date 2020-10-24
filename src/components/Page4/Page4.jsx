@@ -9,6 +9,7 @@ const renderField = typeEl => ({ input, label, type, meta: { touched, error, war
     <div>
       { typeEl === 'textarea' && <textarea {...input} placeholder={label} type={type}></textarea> }
       { typeEl === 'input' && <input {...input} placeholder={label} type={type}/> }
+      { typeEl === 'select' && <select><option></option><option value="Male">Male</option><option value="Female">Female</option></select> }
       
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
     </div>
@@ -35,11 +36,12 @@ function MessageForm(props) {
         validate={[ required, maxLength15 ]}
       />
       <br/>
-      <Field name="gender" component="select">
-        <option></option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </Field>
+      <Field 
+        name="gender" 
+        component={ renderField('select') } 
+        label="gender"
+        validate={[ required ]}
+      />
       <br/>
       <Field 
         name="text" 
